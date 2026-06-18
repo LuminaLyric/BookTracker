@@ -6,15 +6,19 @@
     <title>BookTracker</title>
   </head>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       padding: 0;
       background-color: #e5e5e5;
+      overflow-x: hidden;
     }
     #Head {
       margin: 0;
       text-align: center;
-      font-size: 2.5em;
+      font-size: clamp(1.6em, 6vw, 2.5em);
       background: linear-gradient(90deg, #ff7e5f, #feb47b);
       display: block;
       top: 0em;
@@ -46,12 +50,15 @@
     .bookList-container {
       padding: 15px;
       width: 20%;
+      min-width: 220px;
+      max-width: 320px;
       background: black;
       color: white;
       border-radius: 15px;
       margin: 20px;
       display: inline-block;
       margin-top: 100px;
+      vertical-align: top;
     }
     .bookList-container h2 {
       color: red;
@@ -77,10 +84,11 @@
       padding-bottom: 20px;
       color: black;
       font-size: 20px;
-      width: 300px;
+      width: 90%;
+      max-width: 320px;
       border-radius: 10px;
       z-index: 2;
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -121,7 +129,7 @@
     }
 
     #overlay {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
